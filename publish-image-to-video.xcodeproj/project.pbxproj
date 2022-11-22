@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18A84078F2B340AA35E47EE6 /* libPods-publish-image-to-video.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD3E073D0010076D1956427 /* libPods-publish-image-to-video.a */; };
+		EA10C9DD292B500800CA698A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10C9DC292B500800CA698A /* AppDelegate.swift */; };
+		EA10C9DF292B500800CA698A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10C9DE292B500800CA698A /* SceneDelegate.swift */; };
+		EA10C9E1292B500800CA698A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10C9E0292B500800CA698A /* ViewController.swift */; };
+		EA10C9E4292B500800CA698A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E2292B500800CA698A /* Main.storyboard */; };
+		EA10C9E6292B500B00CA698A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E5292B500B00CA698A /* Assets.xcassets */; };
+		EA10C9E9292B500B00CA698A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E7292B500B00CA698A /* LaunchScreen.storyboard */; };
+		EA10C9F1292B6B8900CA698A /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */; };
+		EA10C9F3292B797B00CA698A /* vonage-image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9F2292B797B00CA698A /* vonage-image.png */; };
+		EA1963CE292CCAD500F19AAB /* VideoRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1963CD292CCAD500F19AAB /* VideoRender.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		58CBFC39292E98F3C58E7CBC /* Pods-publish-image-to-video.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-publish-image-to-video.release.xcconfig"; path = "Target Support Files/Pods-publish-image-to-video/Pods-publish-image-to-video.release.xcconfig"; sourceTree = "<group>"; };
+		7FD3E073D0010076D1956427 /* libPods-publish-image-to-video.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-publish-image-to-video.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85695B85239223D9D0C21549 /* Pods-publish-image-to-video.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-publish-image-to-video.debug.xcconfig"; path = "Target Support Files/Pods-publish-image-to-video/Pods-publish-image-to-video.debug.xcconfig"; sourceTree = "<group>"; };
+		EA10C9D9292B500800CA698A /* publish-image-to-video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "publish-image-to-video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA10C9DC292B500800CA698A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA10C9DE292B500800CA698A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EA10C9E0292B500800CA698A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA10C9E3292B500800CA698A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA10C9E5292B500B00CA698A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA10C9E8292B500B00CA698A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA10C9EA292B500B00CA698A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
+		EA10C9F2292B797B00CA698A /* vonage-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vonage-image.png"; sourceTree = "<group>"; };
+		EA1963CD292CCAD500F19AAB /* VideoRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRender.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA10C9D6292B500800CA698A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A84078F2B340AA35E47EE6 /* libPods-publish-image-to-video.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACF639485B1ECE48E1EA4B7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85695B85239223D9D0C21549 /* Pods-publish-image-to-video.debug.xcconfig */,
+				58CBFC39292E98F3C58E7CBC /* Pods-publish-image-to-video.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEA1C0E4F1DB83C9B71F7796 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FD3E073D0010076D1956427 /* libPods-publish-image-to-video.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA10C9D0292B500800CA698A = {
+			isa = PBXGroup;
+			children = (
+				EA10C9DB292B500800CA698A /* publish-image-to-video */,
+				EA10C9DA292B500800CA698A /* Products */,
+				ACF639485B1ECE48E1EA4B7D /* Pods */,
+				CEA1C0E4F1DB83C9B71F7796 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA10C9DA292B500800CA698A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA10C9D9292B500800CA698A /* publish-image-to-video.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA10C9DB292B500800CA698A /* publish-image-to-video */ = {
+			isa = PBXGroup;
+			children = (
+				EA10C9F2292B797B00CA698A /* vonage-image.png */,
+				EA10C9DC292B500800CA698A /* AppDelegate.swift */,
+				EA10C9DE292B500800CA698A /* SceneDelegate.swift */,
+				EA10C9E0292B500800CA698A /* ViewController.swift */,
+				EA10C9E2292B500800CA698A /* Main.storyboard */,
+				EA10C9E5292B500B00CA698A /* Assets.xcassets */,
+				EA10C9E7292B500B00CA698A /* LaunchScreen.storyboard */,
+				EA10C9EA292B500B00CA698A /* Info.plist */,
+				EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */,
+				EA1963CD292CCAD500F19AAB /* VideoRender.swift */,
+			);
+			path = "publish-image-to-video";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA10C9D8292B500800CA698A /* publish-image-to-video */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA10C9ED292B500B00CA698A /* Build configuration list for PBXNativeTarget "publish-image-to-video" */;
+			buildPhases = (
+				22CF9BB2CDED5482C3D270AD /* [CP] Check Pods Manifest.lock */,
+				EA10C9D5292B500800CA698A /* Sources */,
+				EA10C9D6292B500800CA698A /* Frameworks */,
+				EA10C9D7292B500800CA698A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "publish-image-to-video";
+			productName = "publish-image-to-video";
+			productReference = EA10C9D9292B500800CA698A /* publish-image-to-video.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA10C9D1292B500800CA698A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					EA10C9D8292B500800CA698A = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = EA10C9D4292B500800CA698A /* Build configuration list for PBXProject "publish-image-to-video" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA10C9D0292B500800CA698A;
+			productRefGroup = EA10C9DA292B500800CA698A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA10C9D8292B500800CA698A /* publish-image-to-video */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA10C9D7292B500800CA698A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10C9E9292B500B00CA698A /* LaunchScreen.storyboard in Resources */,
+				EA10C9E6292B500B00CA698A /* Assets.xcassets in Resources */,
+				EA10C9E4292B500800CA698A /* Main.storyboard in Resources */,
+				EA10C9F3292B797B00CA698A /* vonage-image.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22CF9BB2CDED5482C3D270AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-publish-image-to-video-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA10C9D5292B500800CA698A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA10C9E1292B500800CA698A /* ViewController.swift in Sources */,
+				EA10C9DD292B500800CA698A /* AppDelegate.swift in Sources */,
+				EA10C9DF292B500800CA698A /* SceneDelegate.swift in Sources */,
+				EA10C9F1292B6B8900CA698A /* VideoCapturer.swift in Sources */,
+				EA1963CE292CCAD500F19AAB /* VideoRender.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA10C9E2292B500800CA698A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA10C9E3292B500800CA698A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA10C9E7292B500B00CA698A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA10C9E8292B500B00CA698A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA10C9EB292B500B00CA698A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA10C9EC292B500B00CA698A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA10C9EE292B500B00CA698A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85695B85239223D9D0C21549 /* Pods-publish-image-to-video.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRAG25QHP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "publish-image-to-video/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "publish-image-to-video uses the microphone.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonage.publish-image-to-video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA10C9EF292B500B00CA698A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58CBFC39292E98F3C58E7CBC /* Pods-publish-image-to-video.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRAG25QHP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "publish-image-to-video/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "publish-image-to-video uses the microphone.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonage.publish-image-to-video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA10C9D4292B500800CA698A /* Build configuration list for PBXProject "publish-image-to-video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA10C9EB292B500B00CA698A /* Debug */,
+				EA10C9EC292B500B00CA698A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA10C9ED292B500B00CA698A /* Build configuration list for PBXNativeTarget "publish-image-to-video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA10C9EE292B500B00CA698A /* Debug */,
+				EA10C9EF292B500B00CA698A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA10C9D1292B500800CA698A /* Project object */;
+}
