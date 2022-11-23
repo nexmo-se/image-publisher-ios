@@ -351,6 +351,8 @@
 				DEVELOPMENT_TEAM = QRAG25QHP4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "publish-image-to-video/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "publish-image-to-video uses camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "publish-image-to-video uses the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -381,6 +383,8 @@
 				DEVELOPMENT_TEAM = QRAG25QHP4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "publish-image-to-video/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "publish-image-to-video uses camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "publish-image-to-video uses the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
