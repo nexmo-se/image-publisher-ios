@@ -15,37 +15,50 @@ let kSessionId = ""
 // Replace with your generated token
 let kToken = ""
 
+
 let kWidgetHeight = 240
 let kWidgetWidth = 320
+let screenSize: CGRect = UIScreen.main.bounds;
+let screenWidth = screenSize.width;
+let screenHeight = screenSize.height;
 
 class ViewController: UIViewController {
     lazy var session: OTSession = {
         return OTSession(apiKey: kApiKey, sessionId: kSessionId, delegate: self)!
     }()
-    
-    lazy var publisher: OTPublisher = {
-        let settings = OTPublisherSettings()
-        settings.name = UIDevice.current.name
-        return OTPublisher(delegate: self, settings: settings)!
-    }()
-    
+
+    var publisher: OTPublisher?
     var subscriber: OTSubscriber?
+    var capturer: ImageCapturer?
+    var imageLoaded: UIImage?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageLoaded = loadImageFromDocumentDirectory(fileName: "vonage-image")
+        addImageView()
         doConnect()
+    }
+    
+    /**
+     * Add image to UIImageView
+     */
+    private func addImageView() {
+        let imageView = UIImageView(image: imageLoaded!)
+                
+        imageView.frame = CGRect(x: Int(screenWidth) - kWidgetWidth - 20, y: Int(screenHeight) - kWidgetHeight - 20, width: kWidgetWidth, height: kWidgetHeight)
+        view.addSubview(imageView)
     }
     
     /**
      * Asynchronously begins the session connect process. Some time later, we will
      * expect a delegate method to call us back with the results of this action.
      */
-    fileprivate func doConnect() {
+    private func doConnect() {
         var error: OTError?
         defer {
-            processError(error)
+            process(error: error)
         }
-        
         session.connect(withToken: kToken, error: &error)
     }
     
@@ -55,68 +68,68 @@ class ViewController: UIViewController {
      * to the OpenTok session.
      */
     fileprivate func doPublish() {
-        var error: OTError?
+        var error: OTError? = nil
         defer {
-            processError(error)
+            process(error: error)
         }
-        
-        let videoRender = VideoRender()
-        publisher.videoCapture = VideoCapturer()
-        publisher.videoRender = videoRender
+        let settings = OTPublisherSettings()
+        settings.name = UIDevice.current.name
+        publisher = OTPublisher(delegate: self, settings: settings)
+        publisher?.videoType = .screen
+        publisher?.audioFallbackEnabled = false
+        publisher?.publishAudio = false
 
+        capturer = ImageCapturer(image: imageLoaded!)
+        publisher?.videoCapture = capturer
         
-        session.publish(publisher, error: &error)
-        
-        let screenBounds = UIScreen.main.bounds
-        
-        
-        if let pubView = publisher.view {
-            pubView.frame = CGRect(x: Int(screenBounds.width) - kWidgetWidth - 20, y: Int(screenBounds.height) - kWidgetHeight - 20, width: kWidgetWidth, height: kWidgetHeight)
-            view.addSubview(pubView)
-        }
+        session.publish(publisher!, error: &error)
     }
     
-    /**
-     * Instantiates a subscriber for the given stream and asynchronously begins the
-     * process to begin receiving A/V content for this stream. Unlike doPublish,
-     * this method does not add the subscriber to the view hierarchy. Instead, we
-     * add the subscriber only after it has connected and begins receiving data.
-     */
     fileprivate func doSubscribe(_ stream: OTStream) {
         var error: OTError?
         defer {
-            processError(error)
+            process(error: error)
         }
         subscriber = OTSubscriber(stream: stream, delegate: self)
         
         session.subscribe(subscriber!, error: &error)
     }
     
-    fileprivate func cleanupSubscriber() {
-        subscriber?.view?.removeFromSuperview()
-        subscriber = nil
-    }
-    
-    fileprivate func cleanupPublisher() {
-        publisher.view?.removeFromSuperview()
-    }
-    
-    fileprivate func processError(_ error: OTError?) {
-        if let err = error {
-            DispatchQueue.main.async {
-                let controller = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                controller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(controller, animated: true, completion: nil)
-            }
+    fileprivate func process(error err: OTError?) {
+        if let e = err {
+            showAlert(errorStr: e.localizedDescription)
         }
     }
     
-    fileprivate func renderVideoFrame() {
-        
+    fileprivate func showAlert(errorStr err: String) {
+        DispatchQueue.main.async {
+            let controller = UIAlertController(title: "Error", message: err, preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(controller, animated: true, completion: nil)
+        }
     }
+    
+    fileprivate func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
+        if let path = Bundle.main.path(forResource:fileName, ofType: "png") {
+            let fileUrl = URL.init(fileURLWithPath: path)
+            print("path", path)
+            print("fileUrl", fileUrl)
+
+            do {
+
+                let imageData = try Data(contentsOf: fileUrl)
+                print("image data", imageData)
+                return UIImage(data: imageData)
+            } catch {
+                print("here", error)
+            }
+        }
+  
+        return nil
+    }
+    
 }
 
-// MARK: - OTSession delegate callbacks
 extension ViewController: OTSessionDelegate {
     func sessionDidConnect(_ session: OTSession) {
         print("Session connected")
@@ -129,35 +142,24 @@ extension ViewController: OTSessionDelegate {
     
     func session(_ session: OTSession, streamCreated stream: OTStream) {
         print("Session streamCreated: \(stream.streamId)")
-        if subscriber == nil {
-            doSubscribe(stream)
-        }
+        doSubscribe(stream)
     }
     
     func session(_ session: OTSession, streamDestroyed stream: OTStream) {
         print("Session streamDestroyed: \(stream.streamId)")
-        if let subStream = subscriber?.stream, subStream.streamId == stream.streamId {
-            cleanupSubscriber()
-        }
     }
     
     func session(_ session: OTSession, didFailWithError error: OTError) {
         print("session Failed to connect: \(error.localizedDescription)")
     }
-    
 }
 
 // MARK: - OTPublisher delegate callbacks
 extension ViewController: OTPublisherDelegate {
     func publisher(_ publisher: OTPublisherKit, streamCreated stream: OTStream) {
-        print("Publishing")
     }
     
     func publisher(_ publisher: OTPublisherKit, streamDestroyed stream: OTStream) {
-        cleanupPublisher()
-        if let subStream = subscriber?.stream, subStream.streamId == stream.streamId {
-            cleanupSubscriber()
-        }
     }
     
     func publisher(_ publisher: OTPublisherKit, didFailWithError error: OTError) {
@@ -169,13 +171,16 @@ extension ViewController: OTPublisherDelegate {
 extension ViewController: OTSubscriberDelegate {
     func subscriberDidConnect(toStream subscriberKit: OTSubscriberKit) {
         if let subsView = subscriber?.view {
-            subsView.frame = CGRect(x: 0, y: kWidgetHeight, width: kWidgetWidth, height: kWidgetHeight)
+            subsView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
             view.addSubview(subsView)
+            view.sendSubviewToBack(subsView);
         }
     }
-    
+
     func subscriber(_ subscriber: OTSubscriberKit, didFailWithError error: OTError) {
         print("Subscriber failed: \(error.localizedDescription)")
     }
-}
 
+    func subscriberVideoDataReceived(_ subscriber: OTSubscriber) {
+    }
+}

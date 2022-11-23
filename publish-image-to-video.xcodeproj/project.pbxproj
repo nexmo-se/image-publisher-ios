@@ -14,9 +14,8 @@
 		EA10C9E4292B500800CA698A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E2292B500800CA698A /* Main.storyboard */; };
 		EA10C9E6292B500B00CA698A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E5292B500B00CA698A /* Assets.xcassets */; };
 		EA10C9E9292B500B00CA698A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9E7292B500B00CA698A /* LaunchScreen.storyboard */; };
-		EA10C9F1292B6B8900CA698A /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */; };
-		EA10C9F3292B797B00CA698A /* vonage-image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA10C9F2292B797B00CA698A /* vonage-image.png */; };
-		EA1963CE292CCAD500F19AAB /* VideoRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1963CD292CCAD500F19AAB /* VideoRender.swift */; };
+		EA74D720292DBF4500CD360E /* ImageCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74D71F292DBF4500CD360E /* ImageCapturer.swift */; };
+		EA74D726292DC62C00CD360E /* vonage-image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA74D725292DC62C00CD360E /* vonage-image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +30,8 @@
 		EA10C9E5292B500B00CA698A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA10C9E8292B500B00CA698A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA10C9EA292B500B00CA698A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
-		EA10C9F2292B797B00CA698A /* vonage-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vonage-image.png"; sourceTree = "<group>"; };
-		EA1963CD292CCAD500F19AAB /* VideoRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRender.swift; sourceTree = "<group>"; };
+		EA74D71F292DBF4500CD360E /* ImageCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCapturer.swift; sourceTree = "<group>"; };
+		EA74D725292DC62C00CD360E /* vonage-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vonage-image.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +84,7 @@
 		EA10C9DB292B500800CA698A /* publish-image-to-video */ = {
 			isa = PBXGroup;
 			children = (
-				EA10C9F2292B797B00CA698A /* vonage-image.png */,
+				EA74D725292DC62C00CD360E /* vonage-image.png */,
 				EA10C9DC292B500800CA698A /* AppDelegate.swift */,
 				EA10C9DE292B500800CA698A /* SceneDelegate.swift */,
 				EA10C9E0292B500800CA698A /* ViewController.swift */,
@@ -94,8 +92,7 @@
 				EA10C9E5292B500B00CA698A /* Assets.xcassets */,
 				EA10C9E7292B500B00CA698A /* LaunchScreen.storyboard */,
 				EA10C9EA292B500B00CA698A /* Info.plist */,
-				EA10C9F0292B6B8900CA698A /* VideoCapturer.swift */,
-				EA1963CD292CCAD500F19AAB /* VideoRender.swift */,
+				EA74D71F292DBF4500CD360E /* ImageCapturer.swift */,
 			);
 			path = "publish-image-to-video";
 			sourceTree = "<group>";
@@ -160,9 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA10C9E9292B500B00CA698A /* LaunchScreen.storyboard in Resources */,
+				EA74D726292DC62C00CD360E /* vonage-image.png in Resources */,
 				EA10C9E6292B500B00CA698A /* Assets.xcassets in Resources */,
 				EA10C9E4292B500800CA698A /* Main.storyboard in Resources */,
-				EA10C9F3292B797B00CA698A /* vonage-image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +198,7 @@
 				EA10C9E1292B500800CA698A /* ViewController.swift in Sources */,
 				EA10C9DD292B500800CA698A /* AppDelegate.swift in Sources */,
 				EA10C9DF292B500800CA698A /* SceneDelegate.swift in Sources */,
-				EA10C9F1292B6B8900CA698A /* VideoCapturer.swift in Sources */,
-				EA1963CE292CCAD500F19AAB /* VideoRender.swift in Sources */,
+				EA74D720292DBF4500CD360E /* ImageCapturer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
